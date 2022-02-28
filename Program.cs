@@ -41,6 +41,33 @@ namespace MediaLibrary
                         {
                             movie.genres.Add("(no genres listed)");
                         }
+                        Console.WriteLine("Enter movie director");
+                        string director = Console.ReadLine();
+                        if (director == "") {
+                            movie.director = "unassigned";
+                        }
+                        else {
+                            movie.director = director;
+                        }
+                        Console.WriteLine("Enter running time (h:m:s)");
+                        string timeEntry = Console.ReadLine();
+                        string[] time = timeEntry.Split(":");
+                        try {
+                            int hours = Int32.Parse(time[0]);
+                            try {
+                                int minutes = Int32.Parse(time[1]);
+                                try {
+                                    int seconds = Int32.Parse(time[2]);
+                                    movie.runningTime = new TimeSpan(hours,minutes,seconds);
+                                } catch (Exception e){
+                                    movie.runningTime = new TimeSpan(hours,minutes,0);
+                                }
+                            } catch (Exception e) {
+                                movie.runningTime = new TimeSpan(hours,0,0);
+                            }
+                        } catch (Exception e) {
+                            movie.runningTime = new TimeSpan(0,0,0);
+                        }
                     }
                 } else if(choice == "2") {
 
