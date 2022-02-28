@@ -23,9 +23,14 @@ namespace MediaLibrary
                 logger.Info("User choice: {Choice}", choice);
 
                 if(choice == "1") {
-
+                    Movie movie = new Movie();
+                    Console.WriteLine("Enter movie title");
+                    movie.title = Console.ReadLine();
+                    if (movieFile.isUniqueTitle(movie.title)) {
+                        
+                    }
                 } else if(choice == "2") {
-                    
+
                 }
             } while (choice == "1" || choice == "2");
 
