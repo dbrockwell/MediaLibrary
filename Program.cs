@@ -59,13 +59,13 @@ namespace MediaLibrary
                                 try {
                                     int seconds = Int32.Parse(time[2]);
                                     movie.runningTime = new TimeSpan(hours,minutes,seconds);
-                                } catch (Exception e){
+                                } catch (Exception){
                                     movie.runningTime = new TimeSpan(hours,minutes,0);
                                 }
-                            } catch (Exception e) {
+                            } catch (Exception) {
                                 movie.runningTime = new TimeSpan(hours,0,0);
                             }
-                        } catch (Exception e) {
+                        } catch (Exception) {
                             movie.runningTime = new TimeSpan(0,0,0);
                         }
                     }
