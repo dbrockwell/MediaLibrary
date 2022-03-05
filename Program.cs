@@ -70,7 +70,10 @@ namespace MediaLibrary
                         }
                     }
                 } else if(choice == "2") {
-
+                    foreach(Movie m in movieFile.Movies)
+                    {
+                        Console.WriteLine(m.Display());
+                    }
                 }
             } while (choice == "1" || choice == "2");
 
