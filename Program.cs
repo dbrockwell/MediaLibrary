@@ -68,8 +68,9 @@ namespace MediaLibrary
                         } catch (Exception) {
                             movie.runningTime = new TimeSpan(0,0,0);
                         }
-                        logger.Info("Movie {0} Added", movie.mediaId);
                     }
+                    movieFile.AddMovie(movie);
+                    logger.Info("Movie {0} Added", movie.mediaId);
                 } else if(choice == "2") {
                     foreach(Movie m in movieFile.Movies)
                     {
