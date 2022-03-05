@@ -70,7 +70,6 @@ namespace MediaLibrary
                         }
                     }
                     movieFile.AddMovie(movie);
-                    logger.Info("Movie {0} Added", movie.mediaId);
                 } else if(choice == "2") {
                     foreach(Movie m in movieFile.Movies)
                     {
